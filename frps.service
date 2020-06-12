@@ -1,0 +1,13 @@
+[Unit]
+Description=Frp Server Service
+After=network-online.target
+
+[Service]
+Type=simple
+User=nobody
+Restart=on-failure
+RestartSec=60s
+ExecStart=/usr/bin/frps -c /etc/frp/frps.ini
+
+[Install]
+WantedBy=multi-user.target
